@@ -1,7 +1,148 @@
 
-@import url();
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300;700&family=Cutive+Mono&family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,600&family=Rubik+Maps&display=swap');
 
 
 
 /* body styling */
+
+*{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nunito Sans';
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 20px;
+    max-width: 35rem;  
+    color: black;
+    font-weight: 400;
+    background-color: rgb(255, 255, 255);
+}
+
+
+/* nav styling */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color:  white;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    color: black;
+    text-align: left;
+    font-family: 'Averia Serif Libre';
+    font-size: var(--nav);
+}
+
+nav a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    color: black; 
+    text-align: left; 
+}
+
+nav a:hover{
+    background: transparent;
+}
+
+nav li:nth-child(1) a:hover{
+   color: rgb(59, 59, 236);
+   font-size: 1.1em;
+ }
+ 
+nav li:nth-child(2) a:hover {
+     color: rgb(59, 59, 236);
+     font-size: 1.2em;
+ }
+ 
+nav li:nth-child(3) a:hover {
+    color: rgb(59, 59, 236);
+    font-size: 1.2em;
+ }
+ 
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 10px; 
+}
+
+nav a#logo {
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    text-align: left;
+}
+
+/* styling */
+
+h1{
+    font-family: 'Rubik Maps';
+    font-weight: 100;
+    line-height: var(--h1-line-height);
+    font-size: 50px;
+    margin-top: 100px;
+    color: cornflowerblue;
+}
+
+h2 {
+    font-family: 'Nunito Sans';
+    font-weight: 600;
+    align-items: left; 
+    font-size: var(--h2);
+    line-height: var(--h2-line-height);
+    margin-bottom: 30px;
+    margin-top: 100px;
+    color: #333333;
+}
+
+h3{
+    font-family: 'Nunito Sans';
+    font-weight: 600;
+    align-items: left; 
+    font-size: 20px;
+    margin-bottom: 100px;
+    margin-top: 150px;
+    color: #333333;
+
+}
+
+ /* Style for grid container */
+ .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* Style for grid items (images) */
+  .grid-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 10px;
+  }
+
+  footer {
+    background-color: transparent; 
+    font-family: 'Averia Serif Libre';
+    font-size: 16px;
+    padding-top: 20px;
+    margin-top: 30px;
+    display: flex;
+    color: black;
+    display: inline-block;
+    
+}
+
 
