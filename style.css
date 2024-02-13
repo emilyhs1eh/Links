@@ -64,6 +64,11 @@ h1{
     font-size: var(--h1);
     line-height: var(--h1-line-height);
     text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.aside {
+    font-size: var(--h2);
 }
 
 
@@ -97,32 +102,31 @@ a{
 
 .blocks {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Using fixed fraction units for simplicity */
-    grid-auto-rows: auto; /* Letting rows adjust to content height */
-    gap: 20px; /* Adding some gap between grid items for a spacious look */
-    grid-auto-flow: row dense; /* Setting the flow to row and enabling dense packing */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .block {
-    display: flex; /* Using flexbox for more control over content alignment */
-    flex-direction: column; /* Stacking content vertically */
-    align-items: center; /* Centering content horizontally */
-    justify-content: center; /* Centering content vertically */
-    padding: 20px; /* Adding padding for spacing */
-    background-color: #f0f0f0; /* Setting background color */
-    border: 1px solid #ccc; /* Adding a border for visual separation */
-    border-radius: 5px; /* Adding some border radius for rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding a subtle box shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 100px; /* Minimum height for each block */
 }
 
 /* Additional styles for elements inside .block */
 .block h2 {
-    margin-bottom: 10px; /* Adding some bottom margin to the heading */
+    margin-bottom: 10px;
 }
 
 .block p {
-    margin-bottom: 0; /* Removing default bottom margin of paragraphs */
+    margin-bottom: 0;
 }
+
 
 
 

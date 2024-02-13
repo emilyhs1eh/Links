@@ -79,7 +79,7 @@ let renderBlock = (block) => {
 		console.log(block)
 		let textItem =
 			`
-				<li>
+				<li class = "block block--text">
 					<blockquote>
 						${block.content_html}
 					</blockquote>
@@ -100,7 +100,7 @@ let renderBlock = (block) => {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
-				<li>
+				<li class = "block block--video">
 					<p><em>Video</em></p>
 					<video controls src="${ block.attachment.url }"></video>
 				</li>
