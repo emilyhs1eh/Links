@@ -112,7 +112,7 @@ a{
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    min-height: 100px; /* Minimum height for each block */
+    min-height: 105px; 
 }
 
 
