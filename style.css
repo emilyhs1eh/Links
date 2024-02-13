@@ -110,9 +110,9 @@ h3{
     font-family: 'Nunito Sans';
     font-weight: 600;
     align-items: left; 
-    font-size: 12px;
-    margin-bottom: 100px;
-    margin-top: 150px;
+    font-size: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     color: #333333;
 
 }
@@ -150,11 +150,10 @@ h3{
 }
 
 
-.blocks{
-    display:grid;
-    grid-template-columns: repeat(4,minmax(0, 1fr));
+.blocks {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr)); 
     gap: var(--gap);
-
 }
 
 .block-link {

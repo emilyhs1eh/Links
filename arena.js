@@ -56,9 +56,6 @@ let renderBlock = (block) => {
 	}
 
 
-
-
-
 	// Images!
 	else if (block.class == 'Image') {
 		console.log(block)
@@ -90,15 +87,12 @@ let renderBlock = (block) => {
 	}
 
 
-
-
-
-
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
 		let attachment = block.attachment.content_type // Save us some repetition
 
-		// Uploaded videos!
+		
+	// Uploaded videos!
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
@@ -113,7 +107,8 @@ let renderBlock = (block) => {
 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
 		}
 
-		// Uploaded PDFs!
+	
+ 	// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
 			console.log(block)
 			let pdfItem =
@@ -136,7 +131,7 @@ let renderBlock = (block) => {
 
 		}
 
-		// Uploaded audio!
+	// Uploaded audio!
 		else if (attachment.includes('audio')) {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
@@ -152,15 +147,14 @@ let renderBlock = (block) => {
 	}
 
 
-
-		// Linked media…
+	// Linked media…
 		else if (block.class == 'Media') {
 		let embed = block.embed.type
 
 
 
 
-		// Linked video!
+	// Linked video!
 		if (embed.includes('video')) {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
@@ -177,7 +171,7 @@ let renderBlock = (block) => {
 
 
 
-		// Linked audio!
+	// Linked audio!
 		else if (embed.includes('rich')) {
 			// …up to you!
 		}
@@ -200,10 +194,6 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 		`
 	container.insertAdjacentHTML('beforeend', userAddress)
 }
-
-
-
-
 
 
 
