@@ -2,10 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300;700&family=Cutive+Mono&family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,600&family=Rubik+Maps&display=swap');
 
 
-
-
 /* body styling */
-
 *{
     margin: 0;
     padding: 0px;
@@ -13,16 +10,15 @@
 }
 
 body{
-    font-family: 'Cutive Mono';
+    max-width: 35rem;  
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    font-family: 'Cutive Mono';
     margin: 20px;
-    max-width: 35rem;  
     color: rgb(231, 0, 0);
     background-color: rgb(0, 0, 0);
 }
-
 
 
 /* colour variables */
@@ -60,11 +56,12 @@ body{
 
 /* font styling */
 h1{
-    font-family: 'Cutive Mono';
+    font-family: 'Rubik Maps';
     font-size: var(--h1);
     line-height: var(--h1-line-height);
     text-transform: uppercase;
     margin-bottom: 30px;
+    color: cornflowerblue;
 }
 
 .aside {
@@ -98,15 +95,15 @@ a{
 }
 
 
-
-
 .blocks {
+    max-width: 35rem;  
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
 .block {
+    max-width: 35rem;  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -118,18 +115,16 @@ a{
     min-height: 100px; /* Minimum height for each block */
 }
 
+
+
 /* Additional styles for elements inside .block */
 .block h2 {
     margin-bottom: 10px;
 }
 
 .block p {
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
-
-
-
-
 
 
 .block-link {
@@ -146,7 +141,7 @@ p + p {
 }
 
 .date{
-    font-family: 'Averia Serif Libre';
+    font-family: 'Cutive Mono';
 }
 
 .section {
@@ -155,6 +150,14 @@ p + p {
     gap: var(--gap);
 }
 
+
+/* tablet media query */
+@media (min-width: 640px) {
+}
+
+/* desktop media query */
+@media (min-width: 1280px) {
+}
 
 
 
