@@ -109,27 +109,25 @@ let renderBlock = (block) => {
 
 	
  	// Uploaded PDFs!
-		else if (attachment.includes('pdf')) {
-			console.log(block)
-			let pdfItem =
+	else if (attachment.includes('pdf')) {
+    console.log(block);
 
-			`
-			<li class="block block--pdf">
-			<a herf ="${block.attachment.url}"> alt="${block.title}> 
-			<figcaption> 
-					${block.title} 
-				<div class = "discription">
-					${block.discription} 
-				</div>  
-			</figcaption> 
-			</figure>
-			</a>
-			</li>
+    let pdfItem = 
+	`
+        <li class="block block--pdf">
+            <figure>
+                <a href="${block.attachment.url}" alt="${block.title}">
+                    <img src="${block.image.large.url}" alt="${block.title}">
+                    <figcaption>${block.title}</figcaption>
+            
+                </a>
+            </figure>
+        </li>
+    `
 
-			`
-		channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
+    channelBlocks.insertAdjacentHTML('beforeend', pdfItem);
+}
 
-		}
 
 	// Uploaded audio!
 		else if (attachment.includes('audio')) {
@@ -201,7 +199,6 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 
 // Now that we have said what we can do, go get the data:
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
-
 	.then((response) => response.json()) // Return it as JSON data
 	.then((data) => { // Do stuff with the data
 		console.log(data) // Always good to check your response!
@@ -209,7 +206,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 
 		// Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
 		data.contents.reverse().forEach((block) => {
-			//console.log(block) // The data for a single block
+			// console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
 
