@@ -117,33 +117,9 @@ h3{
 
 }
 
- /* Style for grid container */
- .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 20px;
-    padding: 20px;
-  }
 
-  /* Style for grid items (images) */
-  .grid-container {
-    width: 100%;
-    height: auto;
-    display: block;
-    padding: 10px;
-  }
+/* block styling */
 
-  footer {
-    background-color: transparent; 
-    font-family: 'Averia Serif Libre';
-    font-size: 16px;
-    padding-top: 20px;
-    margin-top: 30px;
-    display: flex;
-    color: black;
-    display: inline-block;
-    
-}
 
 .channel-description{
     margin-bottom: 100px;
@@ -152,9 +128,12 @@ h3{
 
 .blocks {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr)); 
-    gap: var(--gap);
+    grid-template-columns: repeat(3, minmax(0, 1fr)); 
+    grid-auto-rows: minmax(100px, auto); 
 }
+
+
+
 
 .block-link {
     color: blue;
