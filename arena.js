@@ -72,19 +72,22 @@ let renderBlock = (block) => {
 		channelBlocks.insertAdjacentHTML('beforeend', ImageItem)
 	}
 
+	
+	
 	// Text!
 	else if (block.class == 'Text') {
 		console.log(block)
-		let TextBlock = 
-		`
-			<li class="block block--text">
-		    	${block.content.htmll}"
-		
-
-		</li>
-		`
-		channelBlocks.insertAdjacentHTML('beforeend', TextItem)
+		let textItem =
+			`
+				<li>
+					<blockquote>
+						${block.content_html}
+					</blockquote>
+				</li>
+			`
+		channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
+
 
 
 	// Uploaded (not linked) media…
@@ -119,7 +122,7 @@ let renderBlock = (block) => {
                 <a href="${block.attachment.url}" alt="${block.title}">
                     <img src="${block.image.large.url}" alt="${block.title}">
                     <figcaption>${block.title}</figcaption>
-            
+					<p><a href="${ block.source.url }">See the original pdf↗</a></p>
                 </a>
             </figure>
         </li>
@@ -178,8 +181,6 @@ let renderBlock = (block) => {
 
 
 
-
-
 // It‘s always good to credit your work:
 let renderUser = (user, container) => { // You can have multiple arguments for a function!
 	let userAddress =
@@ -195,10 +196,8 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 
 
 
-
-
 // Now that we have said what we can do, go get the data:
-fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
+fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`,{ cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
 	.then((data) => { // Do stuff with the data
 		console.log(data) // Always good to check your response!
