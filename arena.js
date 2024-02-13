@@ -7,8 +7,7 @@ document.head.appendChild(markdownIt)
 
 
 // Okay, Are.na stuff!
-let channelSlug = 'wave-ripple-water' // The “slug” is just the end of the URL
-
+let channelSlug = 'wave-ripple-water' 
 
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
@@ -22,8 +21,8 @@ let placeChannelInfo = (data) => {
 	// Then set their content/attributes to our data:
 	channelTitle.innerHTML = data.title
 	channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
-	channelCount.innerHTML = data.length
-	channelLink.href = `https://www.are.na/channel/${channelSlug}`
+	//channelCount.innerHTML = data.length
+	//channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
 
 
@@ -32,12 +31,15 @@ let placeChannelInfo = (data) => {
 let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.getElementById('channel-blocks')
+	console.log (block.class)
+
 
 	// Links!
 	if (block.class == 'Link') {
+		console.log(block.title) 
 		let linkItem =
 			`
-			<li>
+			<li class="block block--link">
 				<p><em>Link</em></p>
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
@@ -45,22 +47,52 @@ let renderBlock = (block) => {
 					<img src="${ block.image.original.url }">
 				</picture>
 				<h3>${ block.title }</h3>
-				${ block.description_html }
+				<p class = date >${ block.created_at }</p>
+			
 				<p><a href="${ block.source.url }">See the original ↗</a></p>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
+
+
+
+
 	// Images!
 	else if (block.class == 'Image') {
-		// …up to you!
+		console.log(block)
+		let ImageItem =
+		`
+			<li class="block block--image">
+		    	<figure><img src="${block.image.large.url}"alt="${block.title} by ${block.author}">
+				<figcaption>${block.title}</figcaption>
+
+				</figure>
+
+		</li>
+		`
+		channelBlocks.insertAdjacentHTML('beforeend', ImageItem)
 	}
 
 	// Text!
 	else if (block.class == 'Text') {
-		// …up to you!
+		console.log(block)
+		let TextBlock = 
+		`
+			<li class="block block--text">
+		    	${block.content.htmll}"
+		
+
+		</li>
+		`
+		channelBlocks.insertAdjacentHTML('beforeend', TextItem)
 	}
+
+
+
+
+
 
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
@@ -83,7 +115,25 @@ let renderBlock = (block) => {
 
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
-			// …up to you!
+			console.log(block)
+			let pdfItem =
+
+			`
+			<li class="block block--pdf">
+			<a herf ="${block.attachment.url}"> alt="${block.title}> 
+			<figcaption> 
+					${block.title} 
+				<div class = "discription">
+					${block.discription} 
+				</div>  
+			</figcaption> 
+			</figure>
+			</a>
+			</li>
+
+			`
+		channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
+
 		}
 
 		// Uploaded audio!
@@ -101,9 +151,14 @@ let renderBlock = (block) => {
 		}
 	}
 
-	// Linked media…
-	else if (block.class == 'Media') {
+
+
+		// Linked media…
+		else if (block.class == 'Media') {
 		let embed = block.embed.type
+
+
+
 
 		// Linked video!
 		if (embed.includes('video')) {
@@ -119,12 +174,17 @@ let renderBlock = (block) => {
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 		}
 
+
+
+
 		// Linked audio!
 		else if (embed.includes('rich')) {
 			// …up to you!
 		}
 	}
 }
+
+
 
 
 
@@ -143,6 +203,12 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 
 
 
+
+
+
+
+
+
 // Now that we have said what we can do, go get the data:
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
@@ -152,7 +218,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 
 		// Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
 		data.contents.reverse().forEach((block) => {
-			// console.log(block) // The data for a single block
+			//console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
 

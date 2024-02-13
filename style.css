@@ -110,7 +110,7 @@ h3{
     font-family: 'Nunito Sans';
     font-weight: 600;
     align-items: left; 
-    font-size: 20px;
+    font-size: 12px;
     margin-bottom: 100px;
     margin-top: 150px;
     color: #333333;
@@ -126,7 +126,7 @@ h3{
   }
 
   /* Style for grid items (images) */
-  .grid-item img {
+  .grid-container {
     width: 100%;
     height: auto;
     display: block;
@@ -145,4 +145,37 @@ h3{
     
 }
 
+.channel-description{
+    margin-bottom: 100px;
+}
 
+
+.blocks{
+    display:grid;
+    grid-template-columns: repeat(4,minmax(0, 1fr));
+    gap: var(--gap);
+
+}
+
+.block-link {
+    color: blue;
+}
+
+.block--text{
+    color:red;
+}
+
+p + p {
+    margin-top:1em;
+    margin-bottom: 50px;
+}
+
+.date{
+    font-family: 'Averia Serif Libre';
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
