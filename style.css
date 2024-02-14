@@ -25,7 +25,7 @@ body{
 :root {
     --colour-black:#121111;
     --colour-blue:#539FB0;
-    --colour-beige:#F9F5EE;
+
 
 }
 
@@ -112,7 +112,7 @@ a{
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    min-height: 105px; 
+    min-height: 100px; 
 }
 
 
