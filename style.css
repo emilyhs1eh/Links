@@ -114,30 +114,43 @@ h1 {
 }
 
 #contentButton {
-    background-image: url('https://images.beta.cosmos.so/8952fe48-d475-4157-8037-2f8b7014747d?format=jpeg');
-    background-color: black;
-    color: var(--colour-black);
-    padding: 100px 400px;
+    background-image: url('https://i.pinimg.com/564x/81/0e/a4/810ea4f099ed5a7958f1857ff7b7045c.jpg');
+    background-size: cover;
+    background-color: whitesmoke;
+    color: white; 
+    padding: 150px 200px; 
+    margin-left: 50px;
     text-align: center;
     text-decoration: none;
-    display: block; 
-    font-size: 16px;
+    display:flex;
+    flex-direction: column; 
+    font-size: 20px;
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
     border: 1px solid black;
-    animation: grainyEffect 30s linear infinite alternate;
-    margin: 0 auto; 
-    margin-bottom: 100px;
-    margin-top: 100px;
-   
+    position: relative;
+    overflow: hidden;
+    animation: moveBackground 30s linear infinite; /* Add animation for moving background */
+    margin: 0 auto; /* Center the button horizontally */
+}
+
+/* Animation for moving background */
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
 }
 
 #contentButton:hover {
     background-color: rgb(59, 13, 174);
     color: #f0f0f0;
-    animation: none;
+    animation: none; 
 }
+
 
 
 /* BOX */
@@ -146,7 +159,7 @@ h1 {
     width: 100%;
     height: 800px;
     position: relative;
-    background-color: ; 
+    background-color:#171717;; 
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -220,8 +233,13 @@ h1 {
     color: #1f3a57; 
     text-align: center; 
     margin-left: 20px;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
 
 }
+
+
 
 #channel-description {
     font-size: 30px; 
@@ -256,7 +274,7 @@ h1 {
     text-align: center; 
     position: absolute; 
     bottom: 50px; 
-    left: 46%; 
+    left: 45%; 
     transform: translateX(-50%); 
     color: #f0f0f0;
 }
@@ -361,7 +379,6 @@ p+p {
     body {
         max-width: 100%;
         
-    }
     
 
     .flashback {
@@ -414,12 +431,17 @@ p+p {
     font-family: 'Cutive Mono';
 }
 }
+}
 
 
 
 
 
 
+
+
+
+   
 
 
 
