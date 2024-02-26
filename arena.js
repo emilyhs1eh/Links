@@ -96,19 +96,19 @@ else if (block.class == 'Attachment') {
 // Uploaded PDFs!
 else if (attachment.includes('pdf')) {
     let pdfItem =
-            `
-            <div class="block block--pdf">
-                <figure>
-                    <a href="${block.attachment.url}" alt="${block.title}">
-                        <img src="${block.image.large.url}" alt="${block.title}">
-                        <figcaption>${block.title}</figcaption>
-                        <p><a href="${block.source.url}">See the original pdf↗</a></p>
-                    </a>
-                </figure>
-            </div>
-            `;
-        channelBlocks.insertAdjacentHTML('beforeend', pdfItem);
-    }
+        `
+        <div class="block block--pdf">
+            <figure>
+                <a href="${block.attachment.url}" alt="${block.title}">
+                    <img src="${block.image.large.url}" alt="${block.title}">
+                    <figcaption>${block.title}</figcaption>
+                    <p><a href="${block.source.url}">See the original pdf↗</a></p>
+                </a>
+            </figure>
+        </div>
+        `;
+    channelBlocks.insertAdjacentHTML('beforeend', pdfItem);
+}
 
 // Uploaded audio!
 else if (attachment.includes('audio')) {
@@ -191,3 +191,5 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`,{ cache: 'no-store
 	})
 
 
+
+ 

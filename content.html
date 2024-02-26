@@ -1,18 +1,31 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-
     <title>Links</title>
+   
 </head>
+<body> 
 
-<body>
+    <nav>
+        <div class="logo-container">
+            <a href="index.html" id="logo">≊</a>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="https://www.are.na/lucy-kim-q6twxwer3k/wave-ripple-water">✶✶ARE.NA✶✶</a></li>
+            </ul>
+            <div class="ocean-mode-toggle">
+                <input type="checkbox" id="toggleButton">
+                <label for="toggleButton" class="switch"></label>
+            </div>
+        </div>
+    </nav>
+    
     <main>
-     
         <div class="box">
             <div class="lines">
                 <div class="line"></div>
@@ -21,29 +34,37 @@
             </div>
             <h2 id="channel-title"></h2>
             <aside id="channel-description"></aside>
-            <h3>scroll to snap</h3>
+            <h3>Scroll to Snap</h3>
         </div>
-     
-        <section class="container">
-            <ul class="blocks" id="channel-blocks"></ul> 
-
-<div class="block" data-alphabet="A">Block 1</div>
-<div class="block" data-alphabet="B">Block 2</div>
-<div class="block" data-alphabet="C">Block 3</div>
-
-        </section>
     
-    </main>
-    <script defer src="arena.js"></script>
-    <main>
-        <footer>
-        <!-- <section id="channel-users"></section> -->
-        </footer>
+        <section class="container">
+            <ul class="blocks" id="channel-blocks" ></ul>
+        </section>
     </main>
 
-  
+<footer>
+    <!-- <section id="channel-users"></section> -->
+</footer>
+
+
+
+<script defer src="arena.js"></script>
+<script>
+    const toggleButton = document.getElementById('toggleButton');
+    const body = document.body;
+    const main = document.querySelector('main');
+
+    toggleButton.addEventListener('change', function() {
+        if (this.checked) {
+            body.classList.add('ocean-mode');
+        } else {
+            body.classList.remove('ocean-mode');
+            main.classList.remove('ocean-mode');
+        }
+    });
+</script>
+
+
 
 </body>
 </html>
-
-

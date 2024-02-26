@@ -1,86 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300;700&family=Cutive+Mono&family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,600&family=Rubik+Maps&display=swap');
 
-/* Variables */
-:root {
-    --colour-black: #333333;
-    --colour-blue: #539FB0;
-    --h1: 100px; 
-    --h1-line-height: 10px;
-    --h2: 20px; 
-    --h2-line-height: 20px;
-    --h3: 32px;
-    --h3-line-height: 40px;
-    --p: 20px;
-    --p-line-height: 20px;
-    --a: 20px;
-    --a-line-height: 18px;
-    --spacing: 2em;
-}
 
-/* animation for blocks movement */
-@keyframes blockVisibility {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-@keyframes blockVisibilityHover {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-
-.block {
-    animation: blockVisibility 6s ease infinite alternate; 
-}
-
-.block:hover {
-    animation: blockVisibilityHover 0.5s ease forwards; 
-    transform: scale(1.2);
-}
-
-
-
-
-/* General Styles */
-body {
-    max-width: 100%;
-    overflow-x: hidden; 
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    font-family: 'Cutive Mono', monospace;
-    margin: 0; 
-    padding: 0; 
-    color: red;
-    background-color: #171717;
-    background-size: cover;
-    animation: cameraMovement 5s ease infinite alternate;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    color: whitesmoke;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    height: 70px;
-}
-
-
-
-
-/* Homepage Styles */
+/* Page one - Homepage Styles */
 h1 {
     padding: 100px;
     margin-top: 100px;
@@ -154,13 +75,247 @@ h1 {
 
 
 
-/* BOX */
+
+
+/* Page two - Content Styles */
+/* General Styles */
+
+body {
+    max-width: 100%;
+    overflow-x: hidden; 
+    font-family: 'Cutive Mono';
+    margin: 0; 
+    padding: 0; 
+    color: red;
+    background-color: #171717;
+    background-size: cover;
+    animation: cameraMovement 5s ease infinite alternate;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: whitesmoke;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    height: 70px;
+}
+
+
+
+
+/* Variables */
+:root {
+    --colour-black: #333333;
+    --colour-blue: #539FB0;
+    --h1: 100px; 
+    --h1-line-height: 10px;
+    --h2: 30px; 
+    --h2-line-height: 20px;
+    --h3: 32px;
+    --h3-line-height: 40px;
+    --p: 20px;
+    --p-line-height: 20px;
+    --a: 20px;
+    --a-line-height: 18px;
+    --spacing: 2em;
+}
+
+
+/* nav styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0; /* Corrected value */
+    z-index: 40; 
+    width: 100%; 
+    height: 60px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+.dark-mode-toggle {
+    margin-right: 30px; 
+}
+
+#logo {
+    font-size: 85px;
+    color: cornflowerblue;
+    margin-left: 20px;
+    transition: transform 0.5s ease;
+}
+
+
+/* Additional styles for the switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px; 
+    height: 40px; 
+  }
+  
+  .switch input {
+    display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    border-radius: 20px;
+    transition: background-color 0.4s;
+    width: 30px; 
+    height: 20px; 
+    border: 2px solid #ccc; 
+    background-color: black; 
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px; 
+    width: 30px; 
+    left: 2px;
+    bottom: 2px; 
+    background-color: black;
+    color:#171717;
+    border-radius: 50%;
+    transition: transform 0.4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(12px); /* Adjusted translation to fit the smaller circle */
+  }
+  
+  
+  /* Body & Toggle Button */
+  
+  body {
+    transition: background-color 0.5s ease;
+    background-color: transparent; /* Default background color */
+  }
+  
+  .ocean-mode {
+    background-color: whitesmoke; 
+    color: black; 
+
+  }
+  
+  
+  .ocean-mode-toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .ocean-mode-toggle input {
+    display: none;
+  }
+  
+  .switch {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent; /* Transparent background */
+    border-radius: 34px;
+    transition: background-color 0.3s;
+    border: 2px solid #ccc; /* Added border to the toggle button */
+  }
+  
+  .switch:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  input:checked + .switch {
+    background-color: cornflowerblue;
+  }
+  
+  input:checked + .switch:before {
+    transform: translateX(26px);
+  }
+
+
+
+/* animation for blocks movement */
+@keyframes blockVisibility {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes blockVisibilityHover {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.block {
+    animation: blockVisibility 6s ease infinite alternate; 
+}
+
+.block:hover {
+    animation: blockVisibilityHover 0.5s ease forwards; 
+    transform: scale(1);
+}
+
+
+
+
+
+
+/* Box */
 
 .box {
     width: 100%;
     height: 800px;
     position: relative;
-    background-color:#171717;; 
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -229,29 +384,27 @@ h1 {
 
 
 
+/* Title Styling */
 #channel-title {
-    font-size: 100px;
+    font-size: 50px; /* Adjusted font size for mobile */
     color: #0077c0;
     text-align: center;
-    margin-top: 200px; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    margin-top: 0px; /* Adjusted margin for mobile */
+    position: absolute; /* Changed position to relative for mobile */
 }
 
+/* Description Styling */
 #channel-description {
-    font-size: 18px;
+    font-size: 14px; /* Adjusted font size for mobile */
     color: #87CEFA;
     text-align: center;
-    margin-bottom: 200px; 
+    margin-top: 500px; /* Adjusted margin for mobile */
     position: absolute;
-    margin-left: 150px;
-    margin-right: 150px;
-    bottom: 10px;
-    left: 0;
-    right: 0;
+ 
 }
+
+
+
 
 
 
@@ -289,22 +442,41 @@ h1 {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Blocks Styles */
 .blocks {
     max-width: 100vw; 
     padding: 20px;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);;
 }
+
+
 
 .block {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    /* background-color: whitesmoke;
+    border: 1px solid whitesmoke;  */
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     min-height: 200px;
@@ -312,6 +484,7 @@ h1 {
     margin-bottom: 20px;
     max-width: calc(100% - 40px);
 }
+
 
 .block p {
     margin-bottom: 10px;
@@ -323,7 +496,6 @@ h1 {
 
 .block--text {
     color: red;
-
 }
 
 p+p {
@@ -331,8 +503,12 @@ p+p {
     margin-bottom: 50px;
 }
 
-.date {
-    font-family: 'Cutive Mono';
+
+.block--audio {
+    background-color: #f0f0f0; 
+    border-radius: 8px; 
+    min-width: 470px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 
@@ -376,22 +552,64 @@ p+p {
 
 
 
+/* ocean Mode Styles */
+.ocean-mode {
+    background-color: white; 
+    color: black; 
+} 
+
+/* ocean Mode Box Styles
+
+.ocean-mode .box .box h2 .nav .box h3 .lines{
+    color: #0077c0; 
+    background-color: white; 
+} */
 
 
-/* Desktop Media Query */
-@media (min-width: 1024px) {
-    body {
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* desktop media query */
+@media (min-width: 768px){
+
+    body{
         max-width: 100%;
+        size: 0.9em;
+        margin-top: 10px;
+        background-color: #171717;
+
         
     
 
-    .flashback {
-        height: auto; 
-    }
+
+:root { 
+    --h1: 100px; 
+    --h1-line-height: 10px;
+    --h2: 50px; 
+    --h2-line-height: 10px;
+    --h3: 32px;
+    --h3-line-height: 20px;
+    --p: 20px;
+    --p-line-height: 20px;
+    --a: 20px;
+    --a-line-height: 18px;
+    --spacing: 2em;
+}
 
 
-/* Blocks Styles */
-.blocks {
+
+    /* Blocks Styles */
+    .blocks {
     max-width: 100%;
     display: grid;
     gap: 10px;
@@ -399,9 +617,9 @@ p+p {
     font-size: 16px;
     color: blue;
     
-}
+    }
 
-.block {
+    .block {
     display: flex;
     flex-direction: column;
     align-items: center; 
@@ -414,32 +632,96 @@ p+p {
     margin-bottom: 20px;
     scale: 80%;
     max-width: calc(33.33% - 40px);
+    }
 
-}
 
-.block p {
+    .block p {
     margin-bottom: 10px;
-}
+    }
 
-.block-link {
+    .block-link {
     color: blue;
-}
+    }
 
-.block--text {
+    .block--text {
     color: red;
-    
-}
+    }
 
-p+p {
+    p+p {
     margin-top: 1em;
-    margin-bottom: 50px;
+
+    }
+
+    .date {
+    font-family: 'Cutive Mono';
+    }
+
+    
+    /* Section Styles */
+    .section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.date {
-    font-family: 'Cutive Mono';
+    .section h2 {
+    font-size: 50px;
+    margin-bottom: 2rem;
 }
+
+.box h3 {
+    animation: scrollAnimation 1.5s ease infinite;
+    text-align: center; 
+    position: absolute; 
+    bottom: 50px; 
+    left: 45%; 
+    transform: translateX(-50%); 
+    color: #f0f0f0;
 }
+
+#channel-title {
+    font-size: 100px;
+    font: 'cutive mono';
+    color: #0077c0;
+    text-align: center;
+    margin-top: 150px; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
+
+#channel-description {
+    font-size: 18px;
+    color: #87CEFA;
+    text-align: center;
+    margin-bottom: 100px; 
+    position: absolute;
+    margin-left: 150px;
+    margin-right: 150px;
+    left: 0;
+    right: 0;
+}
+
+
+
+}}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -450,6 +732,23 @@ p+p {
 
 
    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
