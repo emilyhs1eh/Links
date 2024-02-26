@@ -81,7 +81,7 @@ h1 {
 /* General Styles */
 
 body {
-    max-width: 100%;
+    max-width: 35rem;
     overflow-x: hidden; 
     font-family: 'Cutive Mono';
     margin: 0; 
@@ -302,11 +302,8 @@ nav li {
 
 .block:hover {
     animation: blockVisibilityHover 0.5s ease forwards; 
-    transform: scale(1.2);
+   
 }
-
-
-
 
 
 
@@ -383,7 +380,6 @@ nav li {
 }
 
 
-
 /* Title Styling */
 #channel-title {
     font-size: 50px; /* Adjusted font size for mobile */
@@ -402,11 +398,6 @@ nav li {
     position: absolute;
  
 }
-
-
-
-
-
 
 @keyframes scrollAnimation {
     0% {
@@ -436,28 +427,6 @@ nav li {
     transform: translateX(-50%); 
     color: #f0f0f0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Blocks Styles */
 .blocks {
@@ -495,7 +464,11 @@ nav li {
 }
 
 .block--text {
-    color: red;
+    color: white;
+    font-size: 20px;
+    background: linear-gradient(to right,  rgb(87, 87, 250), transparent),
+    url(https://grainy-gradients.vercel.app/noise.svg);
+
 }
 
 p+p {
@@ -505,7 +478,8 @@ p+p {
 
 
 .block--audio {
-    background-color: #f0f0f0; 
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     border-radius: 8px; 
     min-width: 470px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
@@ -549,21 +523,12 @@ p+p {
 
 
 
-
-
-
 /* ocean Mode Styles */
 .ocean-mode {
     background-color: white; 
     color: black; 
 } 
 
-/* ocean Mode Box Styles
-
-.ocean-mode .box .box h2 .nav .box h3 .lines{
-    color: #0077c0; 
-    background-color: white; 
-} */
 
 
 
@@ -591,7 +556,7 @@ p+p {
     
 
 
-:root { 
+    :root { 
     --h1: 100px; 
     --h1-line-height: 10px;
     --h2: 50px; 
@@ -615,7 +580,7 @@ p+p {
     grid-template-columns: repeat(3, 1fr); 
     font-size: 16px;
     color: blue;
-    
+
     }
 
     .block {
@@ -671,7 +636,7 @@ p+p {
     margin-bottom: 2rem;
 }
 
-.box h3 {
+    .box h3 {
     animation: scrollAnimation 1.5s ease infinite;
     text-align: center; 
     position: absolute; 
@@ -681,7 +646,7 @@ p+p {
     color: #f0f0f0;
 }
 
-#channel-title {
+    #channel-title {
     font-size: 100px;
     font: 'cutive mono';
     color: #0077c0;
@@ -689,11 +654,12 @@ p+p {
     margin-top: 150px; 
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+ 
 }
 
-#channel-description {
+    #channel-description {
     font-size: 18px;
     color: #87CEFA;
     text-align: center;
@@ -703,6 +669,25 @@ p+p {
     margin-right: 150px;
     left: 0;
     right: 0;
+}
+
+    .block {
+    animation: blockVisibility 8s ease infinite alternate; 
+}
+
+    .block:hover {
+    animation: blockVisibilityHover 0.5s ease forwards; 
+    transform: scale(1.2);
+   
+}
+
+
+.block--text {
+    color: white;
+    font-size: 30px;
+    margin-top: 5px;
+    background: linear-gradient(to right, rgb(87, 87, 250), transparent),
+    url(https://grainy-gradients.vercel.app/noise.svg);
 }
 
 
