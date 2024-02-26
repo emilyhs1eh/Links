@@ -86,7 +86,7 @@ body {
     font-family: 'Cutive Mono';
     margin: 0; 
     padding: 0; 
-    color: red;
+    color: rgb(248, 3, 3);
     background-color: #171717;
     background-size: cover;
     animation: cameraMovement 5s ease infinite alternate;
@@ -94,18 +94,18 @@ body {
 
 
 footer {
-    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    color: whitesmoke;
-    padding: 10px;
+    color: red;
+    padding: 30px;
     display: flex;
     justify-content: space-between;
     text-align: center;
-    height: 70px;
+    height: 70px; 
+    margin-top: 30px;
+     
 }
-
 
 
 
@@ -297,12 +297,12 @@ nav li {
 
 
 .block {
-    animation: blockVisibility 6s ease infinite alternate; 
+    animation: blockVisibility 8s ease infinite alternate; 
 }
 
 .block:hover {
     animation: blockVisibilityHover 0.5s ease forwards; 
-    transform: scale(1);
+    transform: scale(1.2);
 }
 
 
@@ -587,7 +587,6 @@ p+p {
         size: 0.9em;
         margin-top: 10px;
         background-color: #171717;
-
         
     
 
@@ -707,13 +706,7 @@ p+p {
 }
 
 
-
 }}
-
-
-
-
-
 
 
 
