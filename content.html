@@ -8,8 +8,9 @@
     <title>Links</title>
 </head>
 <body> 
-
+    <div class="cursor"></div>
     <nav>
+        
         <div class="logo-container">
             <a href="index.html" id="logo">≊</a>
         </div>
@@ -26,6 +27,7 @@
     
     <main>
         <div class="scroll-container">
+            
             <div class="scroll-viewport">
                 <div class="box">
                     <div class="lines">
@@ -73,6 +75,24 @@
         });
     </script>
 
+<script>
+document.addEventListener("mousemove", function(event) {
+    // Get the cursor element
+    var cursor = document.querySelector(".cursor");
+    
+    // Update cursor position
+    cursor.style.left = event.clientX + "px";
+    cursor.style.top = event.clientY + "px";
+    
+    // Add animation
+    cursor.style.transform = "scale(2)"; // Example animation
+    
+    // Reset animation after a short delay
+    setTimeout(function() {
+      cursor.style.transform = "scale(1)";
+    }, 200);
+  });
+</script> 
 
 
 </body>
