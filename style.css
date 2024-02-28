@@ -81,7 +81,7 @@ h1 {
 /* General Styles */
 
 body {
-    max-width: 35rem;
+
     overflow-x: hidden; 
     font-family: 'Cutive Mono';
     margin: 0; 
@@ -118,9 +118,9 @@ footer {
     --h2: 30px; 
     --h2-line-height: 20px;
     --h3: 32px;
-    --h3-line-height: 40px;
+    --h3-line-height: 300px;
     --p: 20px;
-    --p-line-height: 20px;
+    --p-line-height: 10px;
     --a: 20px;
     --a-line-height: 18px;
     --spacing: 2em;
@@ -221,7 +221,6 @@ nav li {
   
   body {
     transition: background-color 0.5s ease;
-    background-color: transparent; /* Default background color */
   }
   
   .ocean-mode {
@@ -230,6 +229,9 @@ nav li {
 
   }
   
+  .ocean-mode h3 {
+    color: #000000; /* Cyan color */
+}
   
   .ocean-mode-toggle {
     position: relative;
@@ -311,7 +313,7 @@ nav li {
 
 .box {
     width: 100%;
-    height: 800px;
+    height: 600px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -319,6 +321,12 @@ nav li {
     align-items: center;
     margin-top: auto;
 }
+
+.box .h3{
+    margin-top: 200px;
+
+}
+
 
 .lines {
     position: absolute;
@@ -391,10 +399,11 @@ nav li {
 
 /* Description Styling */
 #channel-description {
-    font-size: 14px; /* Adjusted font size for mobile */
+    font-size: 12px; /* Adjusted font size for mobile */
     color: #87CEFA;
     text-align: center;
-    margin-top: 500px; /* Adjusted margin for mobile */
+    scale: 90%;
+    margin-top: 380px; /* Adjusted margin for mobile */
     position: absolute;
  
 }
@@ -422,19 +431,21 @@ nav li {
     animation: scrollAnimation 1.5s ease infinite;
     text-align: center; 
     position: absolute; 
-    bottom: 50px; 
-    left: 45%; 
+    bottom: 30px; 
+    margin-top: 100px;
+    /* left: 45%;  */
     transform: translateX(-50%); 
-    color: #f0f0f0;
+
 }
 
 /* Blocks Styles */
 .blocks {
+    margin-top: 80px;
     max-width: 100vw; 
     padding: 20px;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(1, 1fr);;
+    grid-template-columns: repeat(auto-fit, minmax(min(35rem, 100%), 1fr))
 }
 
 
@@ -444,14 +455,15 @@ nav li {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    /* background-color: whitesmoke;
-    border: 1px solid whitesmoke;  */
+    background-color: whitesmoke;
+    border: 1px solid whitesmoke;  
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     min-height: 200px;
     min-width: fit-content;
     margin-bottom: 20px;
     max-width: calc(100% - 40px);
+    
 }
 
 
@@ -460,7 +472,7 @@ nav li {
 }
 
 .block-link {
-    color: blue;
+    color: black;
 }
 
 .block--text {
@@ -488,7 +500,7 @@ p+p {
 
 
 /* Block Effect */
-.block::before {
+/* .block::before {
     content: "";
     position: absolute;
     top: 0;
@@ -498,7 +510,7 @@ p+p {
     opacity: 0.3;
     mix-blend-mode: overlay;
     transition: opacity 0.5s;
-}
+} */
 
 .block:hover::before {
     opacity: 0;
@@ -531,8 +543,13 @@ p+p {
 
 
 
+.ocean-mode .line {
+    background: rgba(0, 0, 0, 0.1); /* Change background color to black with opacity */
+}
 
-
+.ocean-mode .line::after {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 75%, #000000 100%); /* Change gradient to black */
+}
 
 
 
@@ -553,8 +570,6 @@ p+p {
         margin-top: 10px;
         background-color: #171717;
         
-    
-
 
     :root { 
     --h1: 100px; 
@@ -578,10 +593,10 @@ p+p {
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(3, 1fr); 
-    font-size: 16px;
+    font-size: 18px;
     color: blue;
-
     }
+
 
     .block {
     display: flex;
@@ -641,9 +656,9 @@ p+p {
     text-align: center; 
     position: absolute; 
     bottom: 50px; 
-    left: 45%; 
+    /* left: 45%;  */
     transform: translateX(-50%); 
-    color: #f0f0f0;
+    margin-top: 40px;
 }
 
     #channel-title {
@@ -691,12 +706,58 @@ p+p {
 }
 
 
+
 }}
 
 
 
 
 
+
+
+/* Tablet media query */
+@media (min-width: 600px) and (max-width: 1024px) {
+    
+    body{
+
+        margin-top: 10px;
+        background-color: #171717;
+    }
+        
+    .blocks {
+        grid-template-columns: repeat(2, 1fr); 
+        max-width: 100%; 
+    }
+
+    .block {
+        max-width: calc(50% - 40px); 
+    }
+
+    #channel-title {
+        font-size: 70px; /* Adjust the font size for tablet */
+        margin-top: 100px; /* Adjust the top margin */
+   
+    }
+
+    #channel-description {
+        font-size: 16px; /* Adjust the font size for tablet */
+        margin-bottom: 50px; /* Adjust the bottom margin */
+    }
+
+    nav {
+        height: 50px; /* Adjust the height of the navigation bar */
+    }
+
+    .nav-right {
+        margin-right: 10px; /* Adjust the right margin of the navigation items */
+    }
+
+    #logo {
+        font-size: 60px; 
+        margin-left: 10px; 
+    }
+
+}
 
 
 
