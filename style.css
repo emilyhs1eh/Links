@@ -124,7 +124,7 @@ footer {
     --h2-line-height: 20px;
     --h3: 32px;
     --h3-line-height: 300px;
-    --p: 20px;
+    --p: 30px;
     --p-line-height: 10px;
     --a: 20px;
     --a-line-height: 18px;
@@ -235,7 +235,7 @@ body {
 }
 
 .ocean-mode .cursor {
-    background-color: blue; 
+    background-color: #4169E1; 
 }
   
 .ocean-mode h3 {
@@ -314,7 +314,7 @@ input:checked + .switch:before {
 }
 
 .block {
-    animation: blockVisibility 2s ease infinite alternate; 
+    animation: blockVisibility 3s ease infinite alternate; 
 }
 
 .block:hover {
@@ -407,14 +407,14 @@ input:checked + .switch:before {
 #channel-title {
     font-size: 50px; 
     text-align: center;
-    margin-top: 0px; 
+    margin-bottom: 10px; 
     position: relative; 
     color: #1f6b9b;
 }
 
 /* Description Styling */
 #channel-description {
-    font-size: 12px; 
+    font-size: 18px; 
     color: #87CEFA;
     text-align: center;
     scale: 90%;
@@ -527,6 +527,7 @@ p+p {
 
 /* Section Styles */
 .section {
+
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -667,7 +668,7 @@ p+p {
     bottom: 50px; 
     /* left: 45%;  */
     transform: translateX(-50%); 
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
     #channel-title {
@@ -675,7 +676,7 @@ p+p {
     font: 'cutive mono';
     color: #0077c0;
     text-align: center;
-    margin-top: 150px; 
+    margin-top: 140px; 
     position: absolute;
     top: 0;
     margin-left: 10px;
@@ -683,7 +684,7 @@ p+p {
 }
 
     #channel-description {
-    font-size: 18px;
+    font-size: 24px;
     color: #87CEFA;
     text-align: center;
     margin-bottom: 100px; 
@@ -776,7 +777,7 @@ body {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: blue; 
+    background-color: #4169E1; 
     position: fixed;
     z-index: 9999; 
     pointer-events: none; 
